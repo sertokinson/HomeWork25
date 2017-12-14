@@ -2,16 +2,47 @@
     width:50px;
     height: 50px;
     border: 1px solid black;
-    margin-left: 3px;
-    margin-top: 3px;
-    float:left;
-    text-align: center;
 }
 
 .container{
-    width:200px;
+    width:156px;
+    display:flex;
+    flex-wrap:wrap ;
+    margin:0 auto;
+
+
 }
-.cell span{
-    position: relative;
-    top:30%;
+.info{
+    width: 156px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media screen and (min-width: 280px) {
+    .cell {
+        width: 80px;
+        height: 80px;
+    }
+    .container,.info {
+        width: 246px;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .cell {
+        width: 120px;
+        height: 120px;
+    }
+    .container,.info {
+        width: 366px;
+    }
+}
+@media screen and (min-width: 900px) {
+    .cell {
+        width: 160px;
+        height: 160px;
+    }
+    .container,.info {
+        width: 486px;
+    }
 }
