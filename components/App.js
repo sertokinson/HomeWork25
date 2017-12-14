@@ -7,7 +7,7 @@ class App extends Component {
         super(props);
         this.state = {
             click:0,
-            letter:"X",
+            letter:"O",
             cells:["","","","","","","","",""],
         };
     }
