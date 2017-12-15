@@ -4,3 +4,4 @@ build/
 coverage/
 -f .idea
 *.log*
+.idea/*
