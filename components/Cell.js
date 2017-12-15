@@ -1,6 +1,5 @@
 import React from "react";
 import * as style from './style.css';
-import App from "./App";
 
 
 export default class Cell extends React.Component{
@@ -15,7 +14,7 @@ export default class Cell extends React.Component{
     render(){
 
         return (
-            <div onClick={this.props.onClick} className={style.cell}><span>{this.props.value}</span></div>
+            <div onClick={this.props.onClick} className={style.cell}>{this.props.value}</div>
         );
     }
 }
