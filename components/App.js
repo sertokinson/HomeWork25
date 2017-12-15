@@ -18,11 +18,11 @@ class App extends Component {
 
     render() {
 
-       // debugger;
-          /*  return (
+   if(!this.state.click)
+            return (
                 <StartPage selectStart={this.selectStart} target="Tic tac toe"/>
 
-            )*/
+            )
             return(
                 <PageGame/>
             )

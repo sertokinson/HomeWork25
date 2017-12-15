@@ -26,7 +26,7 @@ export default class StartPage extends React.Component{
                         return <Cell value={item}/>
                     })}
                 </div>
-                <div className={style.container}> <button onClick={() => selectStart(0)} className={style.startButton}>Start game</button></div>
+                <div className={style.container}> <button onClick={() => this.props.selectStart(1)} className={style.startButton}>Start game</button></div>
 
             </div>
         )
