@@ -36,6 +36,7 @@
 
 .title{
     font-size: 20pt;
+    cursor: default;
 }
 .player2{
     flex:3;
@@ -114,4 +115,9 @@ span{
     .container,.info {
         width: 486px;
     }
+}
+
+.hoverTitle:hover{
+    color: #0d6086;
+    cursor: pointer;
 }

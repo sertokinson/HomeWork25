@@ -24,7 +24,7 @@ class App extends Component {
 
             )*/
             return(
-                <PageGame target="Tic tac toe"/>
+                <PageGame/>
             )
     }
 }

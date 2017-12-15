@@ -6,7 +6,8 @@ export default class PageGame extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            click: 0,
+            restart: false,
+            title:"Tic tac toe",
             letter: "X",
             cells: [
                 "", "", "",
@@ -14,6 +15,7 @@ export default class PageGame extends React.Component{
                 "", "", ""
             ],
         };
+        this.restart = this.restart.bind(this);
     }
     Winner(squares) {
         const lines = [
@@ -37,24 +39,54 @@ export default class PageGame extends React.Component{
 
     onClick(index) {
         let cells = [...this.state.cells];
-        if (cells[index] == "")
+        if (cells[index] === "")
             cells[index] = this.state.letter;
         this.setState({
             cells: cells,
-            letter: cells[index] == "X" ? "O" : "X"
+            letter: cells[index] === "X" ? "O" : "X"
         });
         let win=this.Winner(cells);
-        if(win!=null)
-            alert("Winner "+win);
+        if(win!=null) {
+            this.setState({restart:true,title:"Winner " + win +". Restart?"});
+            return;
+        } else {
+            if(cells.indexOf("") === -1){
+                this.setState({restart:true,title:"Draw. Restart?"});
+            }
+        }
+
+
+
+    }
+
+    restart(){
+        if(!this.state.restart){
+            return;
+        }
+        const initState = {
+            restart: false,
+            title:"Tic tac toe",
+            letter: "X",
+            cells: [
+                "", "", "",
+                "", "", "",
+                "", "", ""
+            ],
+        };
+        this.setState(initState);
 
     }
 
 
     render() {
+        let titleStyle = style.title;
+        if(this.state.restart){
+            titleStyle +=" " + style.hoverTitle;
+        }
         return (
             <div>
                 <div className={style.info}>
-                    <div className={style.title}>{this.props.target}</div>
+                    <div className={titleStyle} onClick={this.restart}>{this.state.title}</div>
                     <div className={style.players}>
                         <div className={style.player1}><span>Player 1</span>X</div>
                         <div className={style.player2}><span>Player 2</span>O</div>

@@ -6,3 +6,4 @@ export const player1: string;
 export const player2: string;
 export const title: string;
 export const info: string;
+export const hoverTitle: string;
